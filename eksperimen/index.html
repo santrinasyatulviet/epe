@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Undangan Pernikahan</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #f7d9d9, #fff);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .card {
+      background: #ffffff;
+      padding: 30px 40px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      text-align: center;
+      max-width: 420px;
+      width: 100%;
+    }
+    h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    p {
+      margin-bottom: 10px;
+      color: #555;
+    }
+    .guest-name {
+      font-size: 22px;
+      font-weight: bold;
+      color: #b76e79;
+      margin: 20px 0;
+    }
+    .note {
+      font-size: 13px;
+      color: #777;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Undangan Pernikahan</h1>
+    <p>Kepada Yth:</p>
+    <div class="guest-name" id="guestName">Tamu Undangan</div>
+    <p>Di Tempat</p>
+
+    <div class="note">
+      Contoh link:<br>
+      <b>undangan.html?to=Ahmad Fauzi</b>
+    </div>
+  </div>
+
+  <script>
+    // Ambil parameter dari URL
+    const params = new URLSearchParams(window.location.search);
+    const namaTamu = params.get('to');
+
+    if (namaTamu) {
+      document.getElementById('guestName').innerText = decodeURIComponent(namaTamu);
+    }
+  </script>
+</body>
+</html>
